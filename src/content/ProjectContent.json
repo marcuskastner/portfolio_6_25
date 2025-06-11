@@ -1,0 +1,22 @@
+[
+  {
+    "title": "API Layer Refactor & Integration",
+    "description": "Refactored legacy backend services into modular, Symfony-based RESTful APIs to streamline business logic and improve maintainability. Standardized endpoint responses and request validation for consistent integration across frontend and third-party consumers. Collaborated with other developers to ensure APIs aligned with UI requirements. This upgrade significantly improved performance, security, and scalability.",
+    "iconKey": "api"
+  },
+  {
+    "title": "Testing & CI/CD Infrastructure",
+    "description": "Designed and implemented automated test suites using Selenium for end-to-end testing and PHPUnit for backend coverage. Integrated these tests into a Bitbucket CI/CD pipeline to catch regressions early and reduce manual QA time. Ensured all new features were covered by tests as part of the development workflow. Collaborated with developers to establish testing best practices and increase code reliability. As a result, deployments became faster, safer, and more predictable.",
+    "iconKey": "code"
+  },
+  {
+    "title": "Google Analytics Data Pipeline",
+    "description": "Set up custom Google Analytics 4 event tracking to capture user behavior with granular precision across key user journeys. Designed and deployed a reporting pipeline that feeds directly into Looker Studio for real-time product dashboards. Collaborated with product managers to define KPIs and data goals, ensuring stakeholders had actionable insights. Implemented event taxonomy and version control to support long-term analytics integrity. This enabled data-driven iteration and improved prioritization of product features.",
+    "iconKey": "chart"
+  },
+  {
+    "title": "Internal Admin Tool",
+    "description": "Developed a custom web-based admin interface to streamline the organization and integration of hotel listings into our platform. Leveraged Expedia’s API to fetch and manage hotel metadata, while integrating Google Maps API for accurate location visualization and geofencing. Focused on user-friendly design to allow non-technical staff to manage listings efficiently and without errors. The tool greatly reduced administrative overhead and improved data accuracy across the system.",
+    "iconKey": "tool"
+  }
+]

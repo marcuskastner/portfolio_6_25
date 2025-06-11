@@ -1,0 +1,28 @@
+{
+  "id": "skills",
+  "title": "Skills",
+  "content": "",
+  "section": [
+    {
+      "title": "Frontend",
+      "content": "Responsive HTML5/CSS3, JavaScript, Twig, and modern UX principles.",
+      "icon": "notes.svg"
+    },
+    {
+      "title": "Backend",
+      "content": "Symfony (PHP), RESTful APIs, Doctrine ORM, and MySQL database design.",
+      "icon": "notes.svg"
+    },
+    {
+      "title": "Testing & CI/CD",
+      "content": "Selenium, PHPUnit, BitBucket pipelines, and Git-based workflows.",
+      "icon": "notes.svg"
+    },
+    {
+      "title": "Architecture & DevOps",
+      "content": "Docker-based containers, webpack, SOLID principles, and DI.",
+      "icon": "notes.svg"
+    }
+  ],
+  "icon": "notes.svg"
+}

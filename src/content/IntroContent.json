@@ -1,0 +1,15 @@
+{
+  "title": "Marcus Kastner Full Stack Developer",
+  "text": "Full Stack Developer with 3 years of experience building scalable web applications using Symfony, MySQL, and modern frontend technologies. Passionate about clean code, performance, and delivering user-focused solutions.",
+  "button": [
+    {
+      "title": "View My Work",
+      "destination": "projects"
+    },
+    {
+      "title": "Get In Touch",
+      "color": "#fff",
+      "destination": "contact"
+    }
+  ]
+}
