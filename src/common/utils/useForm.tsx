@@ -22,7 +22,15 @@ export const useForm = (validate: { (values: IValues): IValues }) => {
     errors: { ...initialValues },
   });
 
+  const encode = (object: Record<string, string>) => {
+    return Object.keys(object)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(object[key])
+      )
+      .join("&");
+  };
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     const values = formState.values;
     const errors = validate(values);
 
@@ -42,14 +50,14 @@ export const useForm = (validate: { (values: IValues): IValues }) => {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(JSON.stringify(values)).toString(),
+      body: encode({ "form-name": "contact", ...values }),
     })
-      .then(() => {
+      .then(() =>
         notification.success({
           message: "Success",
-          description: "Your message has been sent!",
-        });
-      })
+          description: "Form Submitted",
+        })
+      )
       .catch((error) => alert(error));
 
     setTimeout(() => {
