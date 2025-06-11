@@ -22,22 +22,42 @@ export const useForm = (validate: { (values: IValues): IValues }) => {
     errors: { ...initialValues },
   });
 
-  const handleSubmit = async (event: React.ChangeEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     const values = formState.values;
     const errors = validate(values);
-    setFormState((prevState) => ({ ...prevState, errors }));
 
-    event.target.reset();
-    setFormState(() => ({
-      values: { ...initialValues },
-      errors: { ...initialValues },
-    }));
+    if (Object.values(errors).some((error) => error)) {
+      event.preventDefault();
+      setFormState((prevState) => ({ ...prevState, errors }));
 
-    notification["success"]({
-      message: "Success",
-      description: "Your message has been sent!",
-    });
+      const firstErrorMessage = Object.values(errors).find((e) => e);
+
+      notification.error({
+        message: "Validation Error",
+        description: firstErrorMessage || "Please fix the errors in the form.",
+      });
+      return;
+    }
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(JSON.stringify(values)).toString(),
+    })
+      .then(() => {
+        notification.success({
+          message: "Success",
+          description: "Your message has been sent!",
+        });
+      })
+      .catch((error) => alert(error));
+
+    setTimeout(() => {
+      setFormState(() => ({
+        values: { ...initialValues },
+        errors: { ...initialValues },
+      }));
+    }, 100);
   };
 
   const handleChange = (
