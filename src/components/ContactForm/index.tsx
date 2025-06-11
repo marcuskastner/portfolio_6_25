@@ -21,7 +21,7 @@ const Contact = ({ id, content, title }: ContactProps) => {
       <Row justify="center" align="middle">
         <Col lg={12} md={12} sm={24} xs={24}>
           <Slide direction="up" triggerOnce>
-            <FormGroup autoComplete="off" onSubmit={handleSubmit}>
+            <FormGroup autoComplete="off" onSubmit={handleSubmit} data-netlify>
               <h6>Contact Form</h6>
               <Col span={24}>
                 <Input
