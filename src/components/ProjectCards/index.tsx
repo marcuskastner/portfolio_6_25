@@ -36,7 +36,7 @@ const ProjectCards = ({ content, id }: ProjectCardsProps) => {
       <Slide direction="up" triggerOnce>
         <Row justify="center">
           <Col span={24} style={{ textAlign: "center" }}>
-            <h6>Projects</h6>
+            <h6>Case Studies</h6>
           </Col>
         </Row>
         <Row gutter={[32, 32]} justify="center">
